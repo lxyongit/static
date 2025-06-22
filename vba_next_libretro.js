@@ -13,7 +13,6 @@ var Module=moduleArg;var readyPromiseResolve,readyPromiseReject;Module["ready"]=
 );
 })();
 ;
-if (typeof exports === 'object' && typeof module === 'object')
-  module.exports = EJS_Runtime;
-else if (typeof define === 'function' && define['amd'])
-  define([], () => EJS_Runtime);
+export function getEmscripten({ Module }) {
+  return EJS_Runtime(Module)
+}
